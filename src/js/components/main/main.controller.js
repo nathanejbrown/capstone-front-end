@@ -3,14 +3,14 @@
   'use strict';
 
   angular
-    .module('myApp.components.main', [])
+    .module('capstoneApp.components.main', [])
     .controller('mainController', mainController);
 
   mainController.$inject = ['$scope'];
 
   function mainController($scope) {
     /*jshint validthis: true */
-    this.greeting = 'Hello World!';
+    this.greeting = 'Mark Sucks!';
   }
 
 })();

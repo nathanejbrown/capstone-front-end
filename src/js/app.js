@@ -1,13 +1,14 @@
-// sample angular code
-
 (function() {
 
   'use strict';
 
   angular
-    .module('myApp', [
-      'myApp.config',
-      'myApp.components.main'
+    .module('capstoneApp', [
+      'ngRoute',
+      'capstoneApp.config',
+      'capstoneApp.components.main',
+      'angularCSS',
+      'ui.materialize'
     ]);
 
 })();
