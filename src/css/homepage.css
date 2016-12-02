@@ -1,14 +1,40 @@
 .main-background {
   background-image: url("../images/girl-with-sparkler.jpeg");
+}
+
+.main-header {
+  font-family: 'Aref Ruqaa', serif;
+}
+
+.login-background {
+  background-image: url("../images/desk.jpeg");
+}
+
+.background {
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+.login-background h3 {
+  color: white;
+}
+
 .main-background h1 {
   margin-top: 0;
   padding-top: 10vh;
+}
+
+.purple-text {
+  color: #5342A8;
+}
+
+.orange-text {
   color: #F38E4A;
+}
+
+.green-text {
+  color: #2F9A88;
 }
 
 .center-section {
@@ -46,11 +72,11 @@
   margin-top: 2vh;
   height: 30vh;
   width: 100vw;
+  transition: all .3s;
 }
 
 .single-icon:hover {
-  transform: scale(1.1);
-  transition: all .3s;
+  transform: scale(1.05);
 }
 
 a {
@@ -62,7 +88,6 @@ a {
   float: right;
   height: 54vh;
   margin: 3vh 3vw 3vh 0;
-  /*width: 30vw;*/
   border-radius: 10%;
 }
 
@@ -72,4 +97,12 @@ a {
 
 .icon {
   margin-top: 4vh;
+}
+
+.login-form {
+  margin-top: 5vh;
+}
+
+.no-margin {
+  margin: 0;
 }

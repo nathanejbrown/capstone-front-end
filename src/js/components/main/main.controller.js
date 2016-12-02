@@ -10,7 +10,10 @@
 
   function mainController($scope) {
     /*jshint validthis: true */
-    this.greeting = 'Mark Sucks!';
+
+    // this.redirect = function (address) {
+    //   $location.path('/' + address);
+    // }
   }
 
 })();

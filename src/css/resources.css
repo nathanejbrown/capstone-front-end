@@ -1,0 +1,24 @@
+.about-resources {
+  height: auto;
+  min-height: 25vh;
+  width: 30vw;
+  background-color: #2F9A88;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.resources-single {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resources {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+h3 {
+  text-decoration: underline;
+}
