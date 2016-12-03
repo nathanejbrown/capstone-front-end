@@ -15,30 +15,30 @@
   function appConfig($routeProvider) {
     $routeProvider
     .when('/', {
-      templateUrl: './js/components/main/main.view.html',
+      templateUrl: './src/js/components/main/main.view.html',
       controller: 'mainController',
       controllerAs: 'mainCtrl',
-      css: './css/homepage.css'
+      css: './src/css/homepage.css'
     })
     .when('/login', {
-      templateUrl: './js/components/login/login.view.html',
+      templateUrl: './src/js/components/login/login.view.html',
       controller: 'loginController',
       controllerAs: 'loginCtrl',
-      css: './css/homepage.css'
+      css: './src/css/homepage.css'
     })
     .when('/resources', {
-      templateUrl: './js/components/resources/resources.view.html',
-      css: './css/resources.css'
+      templateUrl: './src/js/components/resources/resources.view.html',
+      css: './src/css/resources.css'
     })
     .when('/chat', {
-      templateUrl: './js/components/chat/chat.view.html',
+      templateUrl: './src/js/components/chat/chat.view.html',
       controller: 'chatController',
       controllerAs: 'chatCtrl',
-      css: './css/chat.css'
+      css: './src/css/chat.css'
     })
     .when('/nextsteps', {
-      templateUrl: './js/components/nextSteps/nextsteps.view.html',
-      css: './css/homepage.css'
+      templateUrl: './src/js/components/nextSteps/nextsteps.view.html',
+      css: './src/css/homepage.css'
     });
   }
 
