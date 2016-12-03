@@ -8,8 +8,10 @@
       'capstoneApp.config',
       'capstoneApp.components.main',
       'capstoneApp.components.login',
+      'capstoneApp.components.chat',
       'angularCSS',
-      'ui.materialize'
+      'ui.materialize',
+      'chat'
     ]);
 
 })();

@@ -31,7 +31,7 @@
         if ($rootScope.loggedin) {
           this.errorMessage = 'yayy';
         } else {
-          this.errorMessage = 'You done fucked up A-a-ron!';
+          this.errorMessage = 'Your username or password was incorrect';
         }
       });
     };

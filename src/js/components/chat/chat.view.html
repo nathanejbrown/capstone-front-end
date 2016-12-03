@@ -1,5 +1,11 @@
-<div class="container">
-  <div class="chatBox">
-
-  </div>
-</div>
+<main>
+  <section class="chatBox">
+    <form class="chatInput" ng-submit="chatCtrl.send(chatCtrl.newMessage)">
+      <input type="text" placeholder="Enter message here" ng-model="chatCtrl.newMessage.data">
+      <button type="submit">Send</button>
+    </form>
+    <div ng-repeat="message in chatCtrl.messages">
+      {{ message }}
+    </div>
+  </section>
+</main>
