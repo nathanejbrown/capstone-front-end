@@ -19,10 +19,10 @@
 
     Messages.receive((message) => {
       this.messages.push(message.data);
+      this.newMessage = {data: ''};
     });
 
     this.send = (message) => {
-      console.log('something');
       Messages.send(message);
     };
 
