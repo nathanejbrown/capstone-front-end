@@ -15,7 +15,7 @@
 
     this.memberChat = function () {
       if ($rootScope.loggedin) {
-        $window.location.href = 'http://localhost:8888/#/chat';
+        $window.location.href = 'https://nathanejbrown.github.io/capstone-front-end/#/chat';
       } else {
         this.error = 'You must be logged in for that.';
       }
