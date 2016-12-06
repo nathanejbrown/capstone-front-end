@@ -16,7 +16,8 @@
     Pubnub.init({
       publish_key: 'pub-c-329628de-5303-4dfa-be2c-4b27556d6cf6',
       subscribe_key: 'sub-c-5773fef8-b8ba-11e6-963b-0619f8945a4f',
-      uuid: this.uuid
+      uuid: this.uuid,
+      ssl: true
     });
 
     this.newMessage = {
