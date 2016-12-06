@@ -48,7 +48,7 @@
         this.password = '';
       });
     };
-
+// stuff
     this.loginLinkedin = function() {
       $http.get('https://nathandennis-capstone-backend.herokuapp.com/linkedin');
     };
