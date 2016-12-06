@@ -6,51 +6,51 @@
     .module('capstoneApp.components.login', [])
     .controller('loginController', loginController);
 
-  loginController.$inject = ['$scope', '$http', '$rootScope'];
+  loginController.$inject = ['$scope', '$http', '$rootScope', '$window'];
 
-  function loginController($scope, $http, $rootScope) {
+  function loginController($scope, $http, $rootScope, $window) {
     /*jshint validthis: true */
 
-    this.username = '';
+    this.emailAddress = '';
     this.password = '';
     $rootScope.loggedin = false;
     this.errorMessage = '';
 
-    this.login = function(username, password) {
+    this.login = function(emailAddress, password) {
       $http({
-        url: 'http://localhost:3000/authenticate',
+        url: 'http://nathandennis-capstone-backend.herokuapp.com/authenticate',
         method: 'POST',
-        data: {username: username, password: password}
+        data: {emailAddress: emailAddress, password: password}
       })
       .then(response => {
-        this.username = '';
+        this.emailAddress = '';
         this.password = '';
         if (response.data === 'loggedin') {
           $rootScope.loggedin = true;
         }
         if ($rootScope.loggedin) {
-          this.errorMessage = 'yayy';
+          $window.location.href = '#/profile';
         } else {
-          this.errorMessage = 'Your username or password was incorrect';
+          this.errorMessage = 'Your email address or password was incorrect';
         }
       });
     };
 
-    this.signup = function(username, password) {
+    this.signup = function(emailAddress, password) {
       $http({
-        url: 'http://localhost:3000/signup',
+        url: 'http://nathandennis-capstone-backend.herokuapp.com/signup',
         method: 'POST',
-        data: {username: username, password: password}
+        data: {emailAddress: emailAddress, password: password}
       })
       .then(response => {
-        this.login(this.username, this.password);
-        this.username = '';
+        this.login(this.emailAddress, this.password);
+        this.emailAddress = '';
         this.password = '';
       });
     };
 
     this.loginLinkedin = function() {
-      $http.get('http://localhost:3000/linkedin');
+      $http.get('http://nathandennis-capstone-backend.herokuapp.com/linkedin');
     };
   }
 

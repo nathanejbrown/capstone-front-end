@@ -4,12 +4,6 @@
 
   angular
     .module('capstoneApp.config', [])
-    .constant('config', {
-      pubnub: {
-        'publish-key': 'pub-c-329628de-5303-4dfa-be2c-4b27556d6cf6',
-        'subscribe-key': 'sub-c-5773fef8-b8ba-11e6-963b-0619f8945a4f'
-      }
-    })
     .config(appConfig);
 
   function appConfig($routeProvider) {
@@ -39,6 +33,23 @@
     .when('/nextsteps', {
       templateUrl: './src/js/components/nextSteps/nextsteps.view.html',
       css: './src/css/homepage.css'
+    })
+    .when('/redirect', {
+      /* I was gonna use this to take linkedin data and create a user account in my database. Haven't fully set it up yet. */
+      controller: 'redirectController',
+      controllerAs: 'redirectCtrl'
+    })
+    .when('/profile', {
+      templateUrl: './src/js/components/profile/profile.view.html',
+      controller: 'profileController',
+      controllerAs: 'profileCtrl',
+      css: './src/css/profile.css'
+    })
+    .when('/memberchat', {
+      templateUrl: './src/js/components/member-chat/memberchat.view.html',
+      controller: 'memberChatController',
+      controllerAs: 'memberChatCtrl',
+      css: './src/css/chat.css'
     });
   }
 

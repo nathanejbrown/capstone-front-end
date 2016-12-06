@@ -3,6 +3,7 @@
   height: 80vh;
   background-color: white;
   margin-top: 5vh;
+  overflow: scroll;
 }
 
 main {

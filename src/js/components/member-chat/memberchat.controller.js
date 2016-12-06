@@ -3,15 +3,13 @@
   'use strict';
 
   angular
-    .module('capstoneApp.components.chat', ['pubnub.angular.service'])
-    .controller('chatController', chatController);
+    .module('capstoneApp.components.memberchat', ['pubnub.angular.service'])
+    .controller('memberChatController', memberChatController);
 
-  chatController.$inject = ['$scope', 'Pubnub'];
+  memberChatController.$inject = ['$scope', 'Pubnub'];
 
-  function chatController($scope, Pubnub) {
+  function memberChatController($scope, Pubnub) {
     /*jshint validthis: true */
-
-    // this.userInfo = Messages.user();
 
     this.channel = 'myChannel123';
     this.uuid = Math.floor(Math.random() * 100000).toString();
@@ -20,10 +18,6 @@
       subscribe_key: 'sub-c-5773fef8-b8ba-11e6-963b-0619f8945a4f',
       uuid: this.uuid
     });
-
-    // Messages.send({ to: "support-agent121212", data : { visitor : true }, id: this.userInfo.id });
-
-    // Messages.user({id: this.userInfo.id});
 
     this.newMessage = {
       data: ''
@@ -37,8 +31,10 @@
     });
 
     $scope.$on(Pubnub.getMessageEventNameFor(this.channel), (ngEvent, m) => {
+      console.log(m);
       $scope.$apply(() => {
-        this.messages.push(m);
+        console.log(m);
+        this.messages.push(m.content);
       });
     });
 
@@ -46,13 +42,6 @@
     this.avatarUrl = function(uuid) {
       return 'http://robohash.org/' + uuid + '?set=set2&bgset=bg2&size=70x70';
     };
-
-    // Messages.receive((message) => {
-    //   if (!this.messages.length) {
-    //     this.messages.push('You are connected!');
-    //   }
-    //   this.messages.push(message.data);
-    // });
 
     this.sendMessage = () => {
       Pubnub.publish({

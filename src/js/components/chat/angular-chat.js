@@ -79,7 +79,6 @@ angular.module('chat').service( 'Messages', [ 'ChatCore', function(ChatCore) {
                 });
              });
          }
-
          Messages.subscription = ChatCore.subscribe({
             channels : [ 'global', ChatCore.user().id ].join(','),
             message  : receiver
@@ -90,7 +89,7 @@ angular.module('chat').service( 'Messages', [ 'ChatCore', function(ChatCore) {
     // Set/Get User and Save the World from that Bruce Willis movie.
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     Messages.user = function(data) {
-         return ChatCore.user(data);
+      return ChatCore.user(data);
     };
 
 } ] );

@@ -1,11 +1,11 @@
 <main>
   <section class="chatBox">
-    <form class="chatInput" ng-submit="chatCtrl.send(chatCtrl.newMessage)">
+    <form class="chatInput" ng-submit="chatCtrl.sendMessage(chatCtrl.newMessage)">
       <input type="text" placeholder="Enter message here" ng-model="chatCtrl.newMessage.data" id="messageInput">
       <button type="submit">Send</button>
     </form>
-    <div ng-repeat="message in chatCtrl.messages">
-      {{ message }}
+    <div ng-repeat="message in chatCtrl.messages track by $index">
+      {{ message.content }}
     </div>
   </section>
 </main>
