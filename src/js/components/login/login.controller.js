@@ -18,7 +18,7 @@
 
     this.login = function(emailAddress, password) {
       $http({
-        url: 'http://nathandennis-capstone-backend.herokuapp.com/authenticate',
+        url: 'https://nathandennis-capstone-backend.herokuapp.com/authenticate',
         method: 'POST',
         data: {emailAddress: emailAddress, password: password}
       })
@@ -38,7 +38,7 @@
 
     this.signup = function(emailAddress, password) {
       $http({
-        url: 'http://nathandennis-capstone-backend.herokuapp.com/signup',
+        url: 'https://nathandennis-capstone-backend.herokuapp.com/signup',
         method: 'POST',
         data: {emailAddress: emailAddress, password: password}
       })
@@ -50,7 +50,7 @@
     };
 
     this.loginLinkedin = function() {
-      $http.get('http://nathandennis-capstone-backend.herokuapp.com/linkedin');
+      $http.get('https://nathandennis-capstone-backend.herokuapp.com/linkedin');
     };
   }
 
