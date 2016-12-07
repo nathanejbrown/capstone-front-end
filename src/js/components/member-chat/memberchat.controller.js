@@ -20,7 +20,7 @@
       ssl: true
     });
 
-    this.displayName = $localStorage.firstName;
+    this.displayName = $localStorage.firstName || 'Counselor';
 
     this.newMessage = {
       data: ''

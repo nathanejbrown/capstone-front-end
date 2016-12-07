@@ -45,12 +45,10 @@
     // };
 
     this.sendMessage = () => {
-      if (!this.displayName) {
-        this.displayName = 'Anonymous';
-      }
+      this.username = this.displayName || 'Anonymous';
       Pubnub.publish({
         channel: this.channel,
-        message: {content: `${this.displayName}: ${this.newMessage.data}`, sender_uuid: this.uuid, date: new Date()},
+        message: {content: `${this.username}: ${this.newMessage.data}`, sender_uuid: this.uuid, date: new Date()},
         callback: function(m) {
           console.log(m);
         }
