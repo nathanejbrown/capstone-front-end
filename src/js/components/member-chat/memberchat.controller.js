@@ -6,10 +6,12 @@
     .module('capstoneApp.components.memberchat', ['pubnub.angular.service'])
     .controller('memberChatController', memberChatController);
 
-  memberChatController.$inject = ['$scope', 'Pubnub', '$localStorage'];
+  memberChatController.$inject = ['$scope', 'Pubnub', '$localStorage', '$rootScope'];
 
-  function memberChatController($scope, Pubnub, $localStorage) {
+  function memberChatController($scope, Pubnub, $localStorage, $rootScope) {
     /*jshint validthis: true */
+
+    console.log($rootScope);
 
     this.channel = 'myChannel123';
     this.uuid = Math.floor(Math.random() * 100000).toString();
