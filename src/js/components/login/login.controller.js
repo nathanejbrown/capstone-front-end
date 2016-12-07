@@ -49,11 +49,7 @@
         data: {emailAddress: emailAddress, password: password}
       })
       .then(response => {
-        localStorageService.set(description, response.data.description);
-        localStorageService.set(image, val);
-        this.login(this.emailAddress, this.password);
-        this.emailAddress = '';
-        this.password = '';
+        $window.location.href = '#/';
       });
     };
 

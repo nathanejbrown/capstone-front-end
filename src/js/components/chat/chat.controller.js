@@ -11,8 +11,6 @@
   function chatController($scope, Pubnub) {
     /*jshint validthis: true */
 
-    // this.userInfo = Messages.user();
-
     this.channel = 'myChannel123';
     this.uuid = Math.floor(Math.random() * 100000).toString();
     Pubnub.init({
@@ -24,15 +22,11 @@
 
     this.displayName = '';
 
-    // Messages.send({ to: "support-agent121212", data : { visitor : true }, id: this.userInfo.id });
-
-    // Messages.user({id: this.userInfo.id});
-
     this.newMessage = {
       data: ''
     };
 
-    this.messages = [];
+    this.messages = [{content: 'Welcome to Listen chat! One of our counselors will message you as soon as they\'re connected.'}];
 
     Pubnub.subscribe({
       channel: this.channel,
@@ -46,20 +40,13 @@
     });
 
     // A function to display a nice uniq robot avatar
-    this.avatarUrl = function(uuid) {
-      return 'https://robohash.org/' + uuid + '?set=set2&bgset=bg2&size=70x70';
-    };
-
-    // Messages.receive((message) => {
-    //   if (!this.messages.length) {
-    //     this.messages.push('You are connected!');
-    //   }
-    //   this.messages.push(message.data);
-    // });
+    // this.avatarUrl = function(uuid) {
+    //   return 'https://robohash.org/' + uuid + '?set=set2&bgset=bg2&size=70x70';
+    // };
 
     this.sendMessage = () => {
       if (!this.displayName) {
-        this.displayName = 'Anonymous'
+        this.displayName = 'Anonymous';
       }
       Pubnub.publish({
         channel: this.channel,
