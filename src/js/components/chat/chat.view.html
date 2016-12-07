@@ -2,6 +2,7 @@
   <section class="chatBox">
     <h5 class="center-align">Welcome to Listen Chat</h5>
     <h6 class="center-align">One of our counselors will message you as soon as they're connected</h6>
+    <hr>
     <form class="chatInput" ng-submit="chatCtrl.sendMessage(chatCtrl.newMessage)">
       <input type="text" placeholder="(Optional) Enter your name here" ng-model="chatCtrl.displayName">
       <input type="text" placeholder="Enter message here" ng-model="chatCtrl.newMessage.data" id="messageInput">
