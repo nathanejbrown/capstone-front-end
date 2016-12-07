@@ -11,8 +11,6 @@
   function memberChatController($scope, Pubnub, $localStorage, $rootScope) {
     /*jshint validthis: true */
 
-    console.log($rootScope);
-
     this.channel = 'myChannel123';
     this.uuid = Math.floor(Math.random() * 100000).toString();
     Pubnub.init({
