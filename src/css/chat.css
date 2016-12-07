@@ -8,7 +8,7 @@
 }
 
 .chatBox.loggedIn {
-  border: 15px solid #CCC;
+  border: 15px solid #5342A8;
 }
 
 .chatBox:not(.loggedIn) {
