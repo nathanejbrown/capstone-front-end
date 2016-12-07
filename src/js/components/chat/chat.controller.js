@@ -26,7 +26,7 @@
       data: ''
     };
 
-    this.messages = [{content: 'Welcome to Listen chat! One of our counselors will message you as soon as they\'re connected.'}];
+    this.messages = [];
 
     Pubnub.subscribe({
       channel: this.channel,

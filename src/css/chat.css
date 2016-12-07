@@ -4,6 +4,15 @@
   background-color: white;
   margin-top: 5vh;
   overflow: scroll;
+  padding: 1rem;
+}
+
+.chatBox.loggedIn {
+  border: 15px solid #CCC;
+}
+
+.chatBox:not(.loggedIn) {
+  border: 15px solid #2F9A88;
 }
 
 main {
@@ -15,7 +24,6 @@ main {
   justify-content: center;
 }
 
-form {
-  bottom: 0;
-  border-top: 2px solid black;
+.messages {
+  border-bottom: 1px solid;
 }
