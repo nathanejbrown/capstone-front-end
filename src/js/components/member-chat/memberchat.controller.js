@@ -6,9 +6,9 @@
     .module('capstoneApp.components.memberchat', ['pubnub.angular.service'])
     .controller('memberChatController', memberChatController);
 
-  memberChatController.$inject = ['$scope', 'Pubnub'];
+  memberChatController.$inject = ['$scope', 'Pubnub', '$localStorage'];
 
-  function memberChatController($scope, Pubnub) {
+  function memberChatController($scope, Pubnub, $localStorage) {
     /*jshint validthis: true */
 
     this.channel = 'myChannel123';
@@ -19,6 +19,8 @@
       uuid: this.uuid,
       ssl: true
     });
+
+    this.displayName = $localStorage.firstName;
 
     this.newMessage = {
       data: ''
@@ -32,9 +34,7 @@
     });
 
     $scope.$on(Pubnub.getMessageEventNameFor(this.channel), (ngEvent, m) => {
-      console.log(m);
       $scope.$apply(() => {
-        console.log(m);
         this.messages.push(m.content);
       });
     });
@@ -47,7 +47,11 @@
     this.sendMessage = () => {
       Pubnub.publish({
         channel: this.channel,
-        message: {content: this.newMessage.data, sender_uuid: this.uuid, date: new Date()},
+        message: {
+          content: `${this.displayName}: ${this.newMessage.data}`,
+          sender_uuid: this.uuid,
+          date: new Date()
+        },
         callback: function(m) {
           console.log(m);
         }

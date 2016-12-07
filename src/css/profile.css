@@ -1,11 +1,17 @@
 .profilePicture {
   margin-left: 1vw;
-  height: 75px;
-  width: 75px;
 }
 
 .description {
   border: 1px solid;
-  float: right;
+  float: left;
   margin: 0 1vw 0 1vw;
+}
+
+h1 {
+  margin-left: 1vw;
+}
+
+button {
+  margin-left: 1vw;
 }

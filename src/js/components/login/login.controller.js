@@ -6,9 +6,9 @@
     .module('capstoneApp.components.login', [])
     .controller('loginController', loginController);
 
-  loginController.$inject = ['$scope', '$http', '$rootScope', '$window'];
+  loginController.$inject = ['$scope', '$http', '$rootScope', '$window', '$localStorage'];
 
-  function loginController($scope, $http, $rootScope, $window) {
+  function loginController($scope, $http, $rootScope, $window, $localStorage) {
     /*jshint validthis: true */
 
     this.emailAddress = '';
@@ -23,9 +23,15 @@
         data: {emailAddress: emailAddress, password: password}
       })
       .then(response => {
+        $localStorage.$default({
+          description: response.data.description,
+          profilePicture: response.data.profilePicture,
+          firstName: response.data.firstName,
+          lastName: response.data.lastName
+        });
         this.emailAddress = '';
         this.password = '';
-        if (response.data === 'loggedin') {
+        if (response.data.loggedin) {
           $rootScope.loggedin = true;
         }
         if ($rootScope.loggedin) {
@@ -43,12 +49,14 @@
         data: {emailAddress: emailAddress, password: password}
       })
       .then(response => {
+        localStorageService.set(description, response.data.description);
+        localStorageService.set(image, val);
         this.login(this.emailAddress, this.password);
         this.emailAddress = '';
         this.password = '';
       });
     };
-// stuff
+
     this.loginLinkedin = function() {
       $http.get('https://nathandennis-capstone-backend.herokuapp.com/linkedin');
     };

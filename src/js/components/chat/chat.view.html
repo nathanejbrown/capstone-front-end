@@ -1,6 +1,7 @@
 <main>
   <section class="chatBox">
     <form class="chatInput" ng-submit="chatCtrl.sendMessage(chatCtrl.newMessage)">
+      <input type="text" placeholder="(Optional) Enter your name here" ng-model="chatCtrl.displayName">
       <input type="text" placeholder="Enter message here" ng-model="chatCtrl.newMessage.data" id="messageInput">
       <button type="submit">Send</button>
     </form>

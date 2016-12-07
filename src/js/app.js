@@ -5,6 +5,7 @@
   angular
     .module('capstoneApp', [
       'ngRoute',
+      'ngStorage',
       'capstoneApp.config',
       'capstoneApp.components.main',
       'capstoneApp.components.login',

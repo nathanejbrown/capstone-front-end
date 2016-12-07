@@ -22,6 +22,8 @@
       ssl: true
     });
 
+    this.displayName = '';
+
     // Messages.send({ to: "support-agent121212", data : { visitor : true }, id: this.userInfo.id });
 
     // Messages.user({id: this.userInfo.id});
@@ -56,9 +58,12 @@
     // });
 
     this.sendMessage = () => {
+      if (!this.displayName) {
+        this.displayName = 'Anonymous'
+      }
       Pubnub.publish({
         channel: this.channel,
-        message: {content: this.newMessage.data, sender_uuid: this.uuid, date: new Date()},
+        message: {content: `${this.displayName}: ${this.newMessage.data}`, sender_uuid: this.uuid, date: new Date()},
         callback: function(m) {
           console.log(m);
         }
